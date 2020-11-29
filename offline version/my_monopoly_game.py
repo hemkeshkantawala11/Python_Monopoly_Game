@@ -1,6 +1,6 @@
 import tkinter as tk
 import random
-from grid_and_place_coordinates import *
+from game_coords import *
 from initialising_everything import *
 asf_x = 0
 asf_y = 0
@@ -38,7 +38,7 @@ def show_colors():
 
 
 def play_but_clicked():
-    global n_players, color_but
+    global n_players, color_but, playing_tokens, chances
     n_players = entry.get()
 
     if n_players in n_players:
@@ -82,6 +82,7 @@ def play_but_clicked():
 
 class ask_info:
     def __init__(self, player_num):
+        global player_chances
         self.player_num = player_num
         self.player_str = player_chances[player_num]
         self.token_str = playing_tokens[player_num]
